@@ -25,7 +25,30 @@ create table people (
  /* select (필드) from (테이블) 
  필드에 * 기호를 넣으면 테이블의 모든 필드값을 확인한다
  */
- select * from people;
+select * from people;
 
 /* insert이용해서 people에 사람 2명을 더 추가하고 select로 확인*/ 
- 
+insert into people (ID, Name) values (2 ,"GREEN");
+insert into people (ID, Name) values (3 ,"성춘향");
+
+/* alter table 테이블이름 add 필드이름 필드타입 */
+alter table people ADD age int;
+alter table people ADD Phone int;
+
+/* alter table 테이블 이름 drop 필드이름*/
+alter table people drop Phone;
+/* alter는 테이블을 수정할 수 있지만 
+데이터를 지우거나 null이 들어가기 때문에 자주 사용하지않는다.
+*/ 
+
+/* drop을 이용해서 데이터베이스와 테이블 삭제*/
+drop table people;
+drop database test;
+/*
+drop은 create를 쓰기전에 중복되는 데이터베이스가 있다면 삭제하기 위해서 사용
+아래 세줄을 묶음으로 많이 사용한다.
+drop database test;
+create database test;
+use test; 
+*/
+
