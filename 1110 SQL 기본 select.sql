@@ -54,3 +54,24 @@ select * from actor where last_name = "CHASE";
 select * from actor where last_name = "CHASE" is false;
 select * from actor where actor_id between 100 and 110;
 select * from actor where first_name in("SUSAN" ,"NICK");
+
+/* 논리연산자 : && (and), || (or) , !(not) */
+select * from actor where actor_id >= 100 && actor_id <= 110;
+select * from actor where actor_id != 1;
+select * from actor where actor_id <= 100 || actor_id >= 110;
+
+/* actor_id를 1~5와 195~200 를 한번에 출력하세요 */
+select * from actor where actor_id <=5 || actor_id>= 195;
+
+/* 패턴 매칭 : LIKE - 특정패턴의 데이터를 포함해서 찾음
+	와일드카드 : 문자나 문자열을 대체하기위해 사용되는 기호
+    %, _
+    % : 0개 이상의 문자를 대체함
+    _ : 1개의 문자를 대체함
+*/
+select * from actor where first_name LIKE 'B%';
+select * from actor where first_name LIKE 'B___';
+select * from actor where first_name LIKE '%B';
+select * from actor where first_name LIKE '%B%';
+
+/* last_name 중에서 A가 들어가는 모든 사람을 출력*/
