@@ -49,3 +49,8 @@ IS : last_name이 CHASE 인 사람을 찾으세요
 BETWEEN : actor_id가 100에서 110인 데이터를 출력하세요
 IN : first_name이 SUSAN과 NICK인 사람을 찾으세요
 */
+select * from actor where actor_id >= 190;
+select * from actor where last_name = "CHASE";
+select * from actor where last_name = "CHASE" is false;
+select * from actor where actor_id between 100 and 110;
+select * from actor where first_name in("SUSAN" ,"NICK");
