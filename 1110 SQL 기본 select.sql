@@ -75,3 +75,19 @@ select * from actor where first_name LIKE '%B';
 select * from actor where first_name LIKE '%B%';
 
 /* last_name 중에서 A가 들어가는 모든 사람을 출력*/
+select * from actor where last_name LIKE '%A%';
+
+/* LIKE : 한글도 동일하게 검색*/
+use book;
+select * from Coding;
+select * from Coding where Title LIKE '자%';
+
+/* REGEXP : 정규식 - like 보다 복잡한 패턴으로 데이터를 찾고 싶을때 사용 */
+use sakila;
+/* 
+^ : 뒤에 있는 문자가 문자열의 처음일때 
++ : 앞에 있는 문자가 1번 이상 반복될때
+문자만 적었을때 : 해당 문자가 들어가있는 모든 데이터
+*/
+select * from actor where first_name REGEXP "^B";
+select * from actor where last_name REGEXP "S+";
