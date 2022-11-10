@@ -43,3 +43,6 @@ delete from Coding;
 id가 1인 Page를 100으로 업데이트하고
 Author가 홍길동인 데이터를 삭제하세요.
 */
+update Coding set Page = 100 where id = 1;
+delete from Coding where Author = "홍길동";
+select * from Coding;
