@@ -46,5 +46,9 @@ insert into movieactor(id, name, movie)
 	default 제약조건을 추가하세요 - 0;
 */
 alter table movierate alter rate set default 0;
+/* modify를 이용한 수정은 가능*/
+alter table movierate modify time timestamp default current_timestamp;
+
+
 select * from movierate;
 insert into movierate(id, Title) values (3,"해리포터");
