@@ -42,7 +42,9 @@ alter table movieactor add regist timestamp default current_timestamp;
 insert into movieactor(id, name, movie) 
 	values (4, "성춘향", "춘향전");
 
-/* movierate 테이블의 time 필드에 alter를 이용하여 
-	default 제약조건을 추가하세요 - current_timestamp;
+/* movierate 테이블의 rate 필드에 alter를 이용하여 
+	default 제약조건을 추가하세요 - 0;
 */
-
+alter table movierate alter rate set default 0;
+select * from movierate;
+insert into movierate(id, Title) values (3,"해리포터");
