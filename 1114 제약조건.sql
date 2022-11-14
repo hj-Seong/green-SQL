@@ -26,7 +26,23 @@ insert into movieinfo values (2, "반지의 제왕", "새로운 영화입니다"
 id(pk), name(nn), movie
 원하는 값 추가 후 확인하기 : 1, 유해진, 공조
 */
+create table movieactor(
+	id int primary key,
+    name varchar(20) not null,
+    movie varchar(100) 
+);
+insert into movieactor(id, name) values (3, "홍길동");
+select * from movieactor;
 
+/* 제약조건을 alter를 이용해서 기존의 필드에 추가하기*/
+alter table movieactor alter movie set default "없음";
 
+/* 제약조건을 alter를 이용해서 새로운 필드 추가하기*/
+alter table movieactor add regist timestamp default current_timestamp;
+insert into movieactor(id, name, movie) 
+	values (4, "성춘향", "춘향전");
 
+/* movierate 테이블의 time 필드에 alter를 이용하여 
+	default 제약조건을 추가하세요 - current_timestamp;
+*/
 
