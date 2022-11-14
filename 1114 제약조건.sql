@@ -1,0 +1,32 @@
+/*
+제약조건 : 데이터를 입력 받을때 실행되는 검사 규칙
+> create로 생성해줄 때 함께 추가
+
+NOT NULL : 값에 빈값이 들어갈수 없음
+UNIQUE : 중복된 값을 사용할수 없음
+PRIMARY KEY : not null과 unique의 특정을 모든 가진 키 - 테이블당 하나
+			데이터를 찾을 때 사용, 업데이트 및 삭제시에 사용
+FOREIGN KEY : 다른 테이블과 연결 > join
+DEFAULT : 해당 필드의 기본값 설정
+*/
+/*
+영화 정보 테이블
+id(primary key), title(not null), detail
+*/
+create table movieinfo(
+	Id int primary key,
+    title varchar(100) not null,
+    detail text
+);
+insert into movieinfo values (1,"공조", "영화입니다");
+select * from movieinfo;
+insert into movieinfo values (2, "반지의 제왕", "새로운 영화입니다");
+
+/* movieactor 영화배우 테이블을 생성하세요.
+id(pk), name(nn), movie
+원하는 값 추가 후 확인하기 : 1, 유해진, 공조
+*/
+
+
+
+
