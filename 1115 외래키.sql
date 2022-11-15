@@ -35,5 +35,38 @@ testtable3 생성
 id(int), name(varchar()), parentid(int/testtable1의 id를 foreign key)
 insert를 통해 값이 들어가는지 확인
 */
+create table testtable3 (
+	id int primary key,
+    name varchar(30),
+    parentid int,
+    foreign key (parentid) references testtable1(id) on update cascade
+);
+select * from testtable3;
+insert into testtable3 values (3, "성춘향", 4);
+
+/* on update, on delete 에 따른 foreign key 값의 변화*/
+/* on update와 on delete 뒤에 작성해줄수 있는 내용
+cascade : 연결되어있는 외부 테이블의 값이 바뀌면 FK의 값도 바뀐다
+			*값이 삭제가 될 경우 관련 데이터가 삭제된다
+set null : 연결되어있는 외부 테이블의 값이 바뀌거나 삭제되면 FK가 null로 바뀐다
+no action : 연결되어있는 값이 바뀌거나 수정되어도 값이 그대로이다
+set default : 연결되어있는 외부 테이블의 값이 바뀌거나 삭제되면 FK가 default값으로 바뀐다
+*/
+
+/* testtable1의 id값을 수정하고, testtable2의 parentid값 확인*/
+update testtable1 set id = 4 where id = 1;
+select * from testtable1;
+select * from testtable2;
+delete from testtable1 where id = 4;
+
+/* FK를 이용해서 외부 테이블과 연결해서 사용할수 있다
+연결해서 사용한 테이블들을 함께 select해서 출력하기위해 join을 사용할수 있다
+* testtable1과 testtable2를 join을 통해서 함께 출력
+(id, text) (myid, parentid) 
+*/
+/* inner join : on에 작성된 조건을 만족하는 데이터만 들고옴*/
+select * from testtable1 inner join testtable2 
+	on testtable1.id = testtable2.parentid;
+/* testtable3을 inner join을 통해서 출력하세요*/
 
  
