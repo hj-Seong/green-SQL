@@ -41,5 +41,6 @@ insert into comment value (4, 4, "댓글추가");
 select * from post left join comment
 	on post.postID = comment.postID;
 /* comment에서 post를 left join을 했을때 결과를 출력해보세요 */
-
+select * from comment left join post 
+	on post.postID = comment.postID;
 
