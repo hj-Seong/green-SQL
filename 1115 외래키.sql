@@ -68,5 +68,8 @@ delete from testtable1 where id = 4;
 select * from testtable1 inner join testtable2 
 	on testtable1.id = testtable2.parentid;
 /* testtable3을 inner join을 통해서 출력하세요*/
+select * from testtable1 inner join testtable3
+	on testtable1.id = testtable3.parentid;
+insert into testtable3 values (3, "흥부", 2);
 
  
