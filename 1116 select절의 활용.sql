@@ -80,3 +80,6 @@ select sum(length) as "전체길이의 합" from film;
    avg()를 이용하여 rental_duration의 평균을 구하세요
    sum()을 이용하여 rental_duration의 합계를 구하세요
 */
+select count(distinct rating) from film;
+select avg(rental_duration) from film;
+select sum(rental_duration) from film;
