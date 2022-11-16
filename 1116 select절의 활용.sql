@@ -49,3 +49,16 @@ customer_id 가 100 보다 큰 데이터를 last_name으로 내림차순으로 �
 */
 select * from customer where customer_id > 100
 order by last_name limit 0, 30;
+
+/* min(), max() 함수를 활용해서 각 필드에서 가장 큰값과 작은 값을 가져올수 있다*/
+/* as 를 통해서 컬럼이름을 바꿔서 출력할 수 있다*/
+select min(customer_id) as min_id from customer;
+select max(create_date) from customer;
+
+select * from film;
+select max(length), title from film;
+/* film 테이블에서 (length)길이가 작은 영화의 제목을 출력
+   film 테이블에서 replacement_cost 가 가장 큰 값을 출력
+* film의 rental_rate가 3이상인 영화 중에 lenght가 가장 작은 것부터 정렬하여 
+	영화제목과 lenght 5개를 출력하세요
+   */
