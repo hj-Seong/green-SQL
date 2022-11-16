@@ -59,6 +59,12 @@ select * from film;
 select max(length), title from film;
 /* film 테이블에서 (length)길이가 작은 영화의 제목을 출력
    film 테이블에서 replacement_cost 가 가장 큰 값을 출력
-* film의 rental_rate가 3이상인 영화 중에 lenght가 가장 작은 것부터 정렬하여 
-	영화제목과 lenght 5개를 출력하세요
-   */
+* film의 rental_rate가 3이상인 영화 중에 length가 가장 작은 것부터 정렬하여 
+	영화제목과 length 5개를 출력하세요
+*/
+select min(length), title from film;
+select * from film where length = 46;
+select max(replacement_cost) from film;
+select * from film where replacement_cost = 29.99;
+select * from film where rental_rate>=3 order by length limit 0, 5;
+
