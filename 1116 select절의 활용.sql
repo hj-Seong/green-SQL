@@ -13,5 +13,13 @@ use sakila;
 select * from customer;
 select distinct store_id from customer;
 select * from city;
-/* sakila 데이터베이스의 city 테이블에서 country_id의 종류를 확인하세요 */
 
+/* sakila 데이터베이스의 city 테이블에서 country_id의 종류를 확인하세요 */
+select distinct country_id from city;
+
+/* order by를 통한 정렬 : asc (기본)오름차순으로정렬 / desc 내림차순정렬  */
+select * from customer order by first_name desc;
+select * from customer order by store_id desc, first_name;
+
+/* active를 오름차순으로 정렬한 후 create_date를 내림차순으로 정렬하세요*/
+/* last_name를 오름차순으로 정렬한 후 fisrt_name를 오름차순으로 정렬하세요*/
