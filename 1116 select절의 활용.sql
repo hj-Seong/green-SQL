@@ -47,3 +47,5 @@ limit 0, 10;
 customer_id 가 100 보다 큰 데이터를 last_name으로 내림차순으로 정렬하세요
 + limit를 통해서 30개만 출력
 */
+select * from customer where customer_id > 100
+order by last_name limit 0, 30;
