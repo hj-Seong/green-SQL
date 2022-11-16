@@ -22,4 +22,28 @@ select * from customer order by first_name desc;
 select * from customer order by store_id desc, first_name;
 
 /* active를 오름차순으로 정렬한 후 create_date를 내림차순으로 정렬하세요*/
-/* last_name를 오름차순으로 정렬한 후 fisrt_name를 오름차순으로 정렬하세요*/
+select * from customer order by active asc, create_date desc;
+
+/* last_name를 오름차순으로 정렬한 후 first_name를 오름차순으로 정렬하세요*/
+select * from customer order by last_name , first_name; 
+
+/* limit를 이용해서 원하는 범위만 출력할수 있다*/
+/* limit 시작위치(0) 출력 개수*/
+select * from customer limit 0,3;
+
+/* create_date를 오름차순으로 정렬하고 first_name을 오름차순으로 정렬한 후 
+   가장 위에 있는 10개만 출력*/ 
+select * from customer order by create_date, first_name 
+limit 0, 10;
+
+
+/* create_date를 오름차순으로 정렬하고 first_name을 오름차순으로 정렬한 후 
+   가장 위에 있는 10개만 출력 + where를 통해 store_id값이 1인 내용 만 출력*/ 
+select * from customer where store_id = 1
+order by create_date, first_name 
+limit 0, 10;
+
+/* 
+customer_id 가 100 보다 큰 데이터를 last_name으로 내림차순으로 정렬하세요
++ limit를 통해서 30개만 출력
+*/
