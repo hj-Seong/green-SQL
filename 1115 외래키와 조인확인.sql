@@ -1,5 +1,7 @@
 /* 외래키와 join  - test 데이터베이스에서 진행*/
 /* post table과 comment table 작성 후 원하는 데이터만 출력해서 보기*/
+create database test;
+use test;
 create table post(
 	postID int primary key,
     title varchar(100),
@@ -29,8 +31,9 @@ select *from comment;
 
 /* inner join을 통해서 내용 가져오기*/
 /* 테이블을 함께 가져올때, 필드의 이름도 테이블과 함께 작성해서 들고온다*/
-select post.postID, post.title, post.text, comment.text from post inner join comment
-	on post.postID = comment.postID;
+select post.postID, post.title, post.text, comment.text 
+from post inner join comment
+on post.postID = comment.postID;
 
 /* comment에 postID값 4를 추가하고 결과를 확인하세요 */
 insert into comment value (4, 4, "댓글추가");
@@ -40,6 +43,7 @@ insert into comment value (4, 4, "댓글추가");
 /* left join 왼쪽에 작성한(먼저 작성한) 테이블이 전부 출력되는 join*/
 select * from post left join comment
 	on post.postID = comment.postID;
+    
 /* comment에서 post를 left join을 했을때 결과를 출력해보세요 */
 select * from comment left join post 
 	on post.postID = comment.postID;
