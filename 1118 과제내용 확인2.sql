@@ -1,3 +1,6 @@
+/* 데이터 베이스가 이미있는 경우는 drop 을 이용하여 데이터베이스를 삭제하고 실행*/
+/* drop database myDatabase*/
+
 create database myDatabase;
 use myDatabase;
 create table User (
